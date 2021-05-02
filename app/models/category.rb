@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-    has_many :events, dependent: :destroy
+    has_many :users, through: :events, dependent: :destroy
 end
