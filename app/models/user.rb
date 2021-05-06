@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :categories, through: :events
 
     has_secure_password
-    validates :username, uniqueness: { case_sensitive: false }
+    validates :username, uniqueness: true
 
     def fullname
         self.firstname + ' ' + self.lastname
