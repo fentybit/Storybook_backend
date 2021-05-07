@@ -11,6 +11,6 @@ Event.destroy_all
 Image.destroy_all
 User.destroy_all
 
-User.create(username: 'fentybit', password_digest: 'fentybit', firstname: 'Fenty', lastname:'Hall')
+User.create(username: 'fentybit', password: 'fentybit', firstname: 'Fenty', lastname:'Hall')
 
 puts 'seeding success!'

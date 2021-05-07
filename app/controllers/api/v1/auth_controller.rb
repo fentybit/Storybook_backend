@@ -11,11 +11,6 @@ class Api::V1::AuthController < ApplicationController
         end 
     end
 
-    def persist
-        @token = encode_token({ user_id: @user.id })
-        render json: { user: UserSerializer.new(@user), jwt: @token }
-    end 
-
     private
 
         def user_login_params
