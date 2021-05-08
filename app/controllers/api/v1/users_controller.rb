@@ -2,7 +2,8 @@ class Api::V1::UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
     def profile 
-        render json: { user: UserSerializer.new(current_user) }, status: :accepted
+        @token = encode_token({ user_id: @user.id })
+        render json: { user: UserSerializer.new(current_user), jwt: @token }, status: :accepted
     end   
 
     def index 
