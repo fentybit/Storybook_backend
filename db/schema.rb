@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2021_05_02_194555) do
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false
     t.string "title"
-    t.string "date"
-    t.string "time"
-    t.string "llocation"
+    t.date "date"
+    t.time "time"
+    t.string "location"
     t.string "vibe"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false

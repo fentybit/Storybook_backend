@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
 
-      resources :events, only: [:create, :show, :update, :destroy]
+      resources :events, only: [:index, :create, :show, :update, :destroy]
       resources :categories, only: [:create, :show, :update, :destroy]
       resources :images, only: [:destroy]
     end 

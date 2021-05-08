@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class Api::V1::EventsController < ApplicationController
     def index
         @events = Event.all
         render json: @events
@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 
     def create 
         @event = Event.create(event_params)
+        current_user.events << @event
 
         if params[:category]
             @category = @event.create_category(name: params[:category])
