@@ -4,9 +4,9 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.references :category, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.string :title
-      t.string :date
-      t.string :time
-      t.string :llocation
+      t.date :date
+      t.time :time
+      t.string :location
       t.string :vibe
       t.string :description
 
