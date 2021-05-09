@@ -1,24 +1,20 @@
 class Api::V1::EventsController < ApplicationController
+    # skip_before_action :authorized, only: [:create]
+
     def index
         @events = Event.all
         render json: @events
     end 
 
     def create 
-        @event = Event.create(event_params)
-        current_user.events << @event
-
         if params[:category]
-            @category = @event.create_category(name: params[:category])
+            @category = Category.create(name: params[:category])
+
+            @event = Event.create(title: params[:title], vibe: params[:vibe], date: params[:date], time: params[:time], location: params[:location], description: params[:description], category_id: @category.id, user_id: current_user.id)
+
             render json: { event: EventSerializer.new(@event), category: @category }, status: :created
         else 
             render json: { error: 'Failed to create Event.'}, status: :not_acceptable
         end 
     end 
-
-    private
-
-        def event_params
-            params.require(:event).permit(:title, :date, :time, :location, :vibe, :description)
-        end 
 end

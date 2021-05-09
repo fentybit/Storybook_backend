@@ -15,6 +15,6 @@ user = User.create(username: 'fentybit', password: 'fentybit', firstname: 'Fenty
 
 category = Category.create(name: 'Dog')
 
-Event.create(title: 'Fun Day at the Dog Park', date: Date.today, time: Time.now, location: 'Playa Vista Dog Park', vibe: '😀', description: 'Dog having too much fun, and he could not control himself. Maybe I need to take him to another dog park to see how he is doing, he pooped twice.', category_id: category.id, user_id: user.id)
+Event.create(title: 'Fun Day at the Dog Park', vibe: '1 rad', date: Date.today, time: Time.now, location: 'Playa Vista Dog Park', description: 'Dog having too much fun, and he could not control himself. Maybe I need to take him to another dog park to see how he is doing, he pooped twice.', category_id: category.id, user_id: user.id)
 
 puts 'seeding success!'
