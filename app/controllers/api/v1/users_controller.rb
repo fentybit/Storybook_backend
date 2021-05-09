@@ -7,8 +7,7 @@ class Api::V1::UsersController < ApplicationController
     end   
 
     def index 
-        @users = User.all
-        render json: @users
+        render json: User.all
     end
 
     def create
