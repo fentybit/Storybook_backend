@@ -1,11 +1,12 @@
 class Api::V1::EventsController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create]
 
     def index
         render json: Event.all
     end 
 
     def create 
+        byebug
         if params[:category]
             @category = Category.create(name: params[:category])
 
