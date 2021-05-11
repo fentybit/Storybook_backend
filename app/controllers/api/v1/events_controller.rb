@@ -6,13 +6,12 @@ class Api::V1::EventsController < ApplicationController
     end 
 
     def create 
-        byebug
-        if params[:category]
-            @category = Category.create(name: params[:category])
-
+        if params[:category] != ''
+            @category = current_user.categories.find_or_create_by(name: params[:category])
+        
             @event = Event.create(title: params[:title], vibe: params[:vibe], date: params[:date], time: params[:time], location: params[:location], description: params[:description], category_id: @category.id, user_id: current_user.id)
 
-            render json: { event: EventSerializer.new(@event), category: @category }, status: :created
+            render json: { event: EventSerializer.new(@event), category: @category }, status: :created  
         else 
             render json: { error: 'Failed to create Event.'}, status: :not_acceptable
         end 
