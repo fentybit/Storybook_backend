@@ -16,4 +16,14 @@ class Api::V1::EventsController < ApplicationController
             render json: { error: 'Failed to create Event.'}, status: :not_acceptable
         end 
     end 
+
+    def show 
+        @event = Event.find_by(id: params[:id])
+
+        if @event
+            render json: { event: EventSerializer.new(@event) }
+        else
+            render json: { error: 'Event not found.' }
+        end 
+    end 
 end
