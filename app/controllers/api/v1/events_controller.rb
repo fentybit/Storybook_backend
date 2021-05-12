@@ -19,9 +19,10 @@ class Api::V1::EventsController < ApplicationController
 
     def show 
         @event = Event.find_by(id: params[:id])
+        @category = @event.category
 
         if @event
-            render json: { event: EventSerializer.new(@event) }
+            render json: { event: EventSerializer.new(@event), category: @category }
         else
             render json: { error: 'Event not found.' }
         end 
