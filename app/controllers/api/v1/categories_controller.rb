@@ -1,5 +1,12 @@
 class Api::V1::CategoriesController < ApplicationController
+    skip_before_action :authorized
+
     def index
-        render json: Category.all
+        @categories = []
+        current_user.events.each do |event|
+            @categories << event.category
+        end 
+
+        render json: @categories.uniq
     end 
 end
