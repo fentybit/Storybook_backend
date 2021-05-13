@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2021_05_02_194555) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "events", force: :cascade do |t|
