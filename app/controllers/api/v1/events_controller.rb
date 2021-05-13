@@ -2,7 +2,9 @@ class Api::V1::EventsController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
     def index
-        render json: Event.all
+        @events = current_user.events
+
+        render json: @events
     end 
 
     def create 
