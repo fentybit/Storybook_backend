@@ -108,5 +108,6 @@ Open Chrome browser, and redirect to 'http://localhost:3000' to start the app.
 
 ## Resources
 
+- [x] <a href="https://unsplash.com/">Unsplash</a>
 - [x] <a href="https://www.npmjs.com/package/react-calendar">React Calendar</a>
 - [x] <a href="https://material-ui.com/">Material-UI</a>
