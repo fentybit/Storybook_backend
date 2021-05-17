@@ -14,7 +14,13 @@ class Api::V1::EventsController < ApplicationController
         
             @event = Event.create(title: params[:title], vibe: params[:vibe], date: params[:date], time: params[:time], location: params[:location], description: params[:description], category_id: @category.id, user_id: current_user.id)
 
-            render json: { event: EventSerializer.new(@event), category: CategorySerializer.new(@category) }, status: :created  
+            if params[:image] != ''
+                uploaded_image = Cloudinary::Uploader.upload(params[:image])
+
+                @image = Image.create(url: uploaded_image['url'], event_id: @event.id)
+            end 
+
+            render json: { event: EventSerializer.new(@event), category: CategorySerializer.new(@category), image: @image }, status: :created  
         else 
             render json: { error: 'Failed to create Event.'}, status: :not_acceptable
         end 

@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_194555) do
 
   create_table "images", force: :cascade do |t|
     t.bigint "event_id", null: false
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_images_on_event_id"
