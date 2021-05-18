@@ -1,4 +1,4 @@
-class Api::V1::AuthController < ApplicationController
+class Api::V1::ImagesController < ApplicationController
     skip_before_action :authorized
 
     def index
@@ -6,7 +6,7 @@ class Api::V1::AuthController < ApplicationController
         
         current_user.events.each do |event|
             if event.images != []
-                @images << event.images
+                @images << event.images[0]
             end 
         end 
 
