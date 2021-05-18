@@ -20,7 +20,7 @@ class Api::V1::EventsController < ApplicationController
                 @image = Image.create(url: uploaded_image['url'], event_id: @event.id)
             end 
 
-            render json: { event: EventSerializer.new(@event), category: CategorySerializer.new(@category), image: @image }, status: :created  
+            render json: { event: EventSerializer.new(@event), category: CategorySerializer.new(@category) }, status: :created  
         else 
             render json: { error: 'Failed to create Event.'}, status: :not_acceptable
         end 

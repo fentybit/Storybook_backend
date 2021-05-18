@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
       resources :events, only: [:index, :create, :show]
       resources :categories, only: [:index, :create]
-      resources :images, only: [:destroy]
+      resources :images, only: [:index]
     end 
   end 
 end
