@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_05_02_194555) do
     t.date "date"
     t.time "time"
     t.string "location"
+    t.string "latitude"
+    t.string "longitude"
     t.string "vibe"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
