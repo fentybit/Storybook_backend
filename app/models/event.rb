@@ -4,7 +4,7 @@ class Event < ApplicationRecord
 
   has_many :images
 
-  def time
+  def time_strftime
     self.time.strftime("%I:%M%p") 
   end 
 end
