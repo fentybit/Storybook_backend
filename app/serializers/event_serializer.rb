@@ -3,5 +3,5 @@ class EventSerializer < ActiveModel::Serializer
 
     belongs_to :category
     belongs_to :user
-    has_many :images
+    has_one :image
 end 
