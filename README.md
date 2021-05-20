@@ -1,7 +1,7 @@
 # Storybook
 
 <div align="center">
-  <img src="#">
+  <img src="public/images/back_end.gif">
 </div>
 
 <br>
