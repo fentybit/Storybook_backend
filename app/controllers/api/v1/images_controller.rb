@@ -5,8 +5,8 @@ class Api::V1::ImagesController < ApplicationController
         @images = []
         
         current_user.events.each do |event|
-            if event.images != []
-                @images << event.images[0]
+            if event.image != []
+                @images << event.image
             end 
         end 
 

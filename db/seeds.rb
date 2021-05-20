@@ -17,7 +17,7 @@ user = User.create(username: 'fentybit', password: 'fentybit', firstname: 'Fenty
 #! DOG 
 first_category = Category.create(name: 'Dog')
 
-event_1 = Event.create(title: 'Fun Day at the Dog Park', vibe: '1 rad', date: '2021-04-10', time: '2021-04-10 12:00:00', location: '12604 Bluff Creek Dr, Los Angeles, CA 90094', latitude: '33.9752466', longitude: '-118.4156689', description: 'Dog having too much fun, and he could not control himself. Maybe I need to take him to another dUser.og park to see how he is doing, he pooped twice.', category_id: first_category.id, user_id: user.id)
+event_1 = Event.create(title: 'Fun Day at the Dog Park', vibe: '1 rad', date: '2021-04-10', time: '2021-04-10 12:00:00', location: '12604 Bluff Creek Dr, Los Angeles, CA 90094', latitude: '33.9752466', longitude: '-118.4156689', description: 'Dog having too much fun, and he could not control himself. Maybe I need to take him to another dog park to see how he is doing, he pooped twice.', category_id: first_category.id, user_id: user.id)
 
 Image.create(url: 'https://res.cloudinary.com/dvxp6coec/image/upload/v1621219888/wzjhdhotbrtbomiqzawe.png', event_id: event_1.id)
 
