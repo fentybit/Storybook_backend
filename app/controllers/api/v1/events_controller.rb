@@ -45,7 +45,7 @@ class Api::V1::EventsController < ApplicationController
 
             @image = @event.image
 
-            if params[:image] != '' && @image     
+            if params[:image] != @image.url     
                 uploaded_image = Cloudinary::Uploader.upload(params[:image])
 
                 @image.update(url: uploaded_image['url'], event_id: @event.id)
