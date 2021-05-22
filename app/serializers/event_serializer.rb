@@ -1,5 +1,5 @@
 class EventSerializer < ActiveModel::Serializer
-    attributes :id, :title, :date, :time, :time_strftime, :location, :latitude, :longitude, :vibe, :description
+    attributes :id, :title, :date, :date_strftime, :time, :time_strftime, :location, :latitude, :longitude, :vibe, :description
 
     belongs_to :category
     belongs_to :user

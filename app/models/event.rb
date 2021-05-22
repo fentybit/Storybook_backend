@@ -7,4 +7,8 @@ class Event < ApplicationRecord
   def time_strftime
     self.time.strftime("%I:%M%p") 
   end 
+
+  def date_strftime
+    self.date.strftime("%a, %B %u, %Y")
+  end 
 end
