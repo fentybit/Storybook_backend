@@ -9,6 +9,6 @@ class Event < ApplicationRecord
   end 
 
   def date_strftime
-    self.date.strftime("%a, %B %u, %Y")
+    self.date.strftime("%a, %B %d, %Y")
   end 
 end
