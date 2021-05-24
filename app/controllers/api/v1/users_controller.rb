@@ -21,27 +21,6 @@ class Api::V1::UsersController < ApplicationController
         end 
     end 
 
-    # def show 
-    #     user = User.find_by(id: params[:id])
-
-    #     if user
-    #         render json: UserSerializer.new(user)
-    #     else 
-    #         render json: { message: 'User not found.' }
-    #     end 
-    # end 
-
-    # def update 
-    #     user = User.find_by(id: params[:id])
-    #     user.update(user_params)
-
-    #     if user.save
-    #         render json: user 
-    #     else 
-    #         render json: { message: 'User not saved.'}
-    #     end 
-    # end 
-
     private
 
         def user_params
